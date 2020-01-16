@@ -83,8 +83,7 @@ export default class StopWatch extends React.Component{
             let millisecond = Math.floor((countingTime % 1000) /10);
             this.setState({
                 showTime: (minute < 10? "0"+minute: minute)+":"+(second < 10? "0"+second: second)+"."+(millisecond < 10? "0"+millisecond: millisecond),
-                accumulateTime: countingTime,
-                currentTime: currentTime
+                accumulateTime: countingTime
             });
         }, 10);
     };
@@ -107,8 +106,9 @@ export default class StopWatch extends React.Component{
     };
     _restartWatch = () => {
         let initialTime = (new Date()).getTime();
-        this.setState({status: 1});
         let {accumulateTime} = this.state;
+
+        this.setState({status: 1});
         this._activeInterval(initialTime, accumulateTime);
     };
     _clearRecord = () => {
