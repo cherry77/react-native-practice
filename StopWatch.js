@@ -16,10 +16,10 @@ export default class StopWatch extends React.Component{
         this.state = {
             status: 0, //0 初始状态 1 计时状态 2 暂停状态
             showTime: '00:00:00',//初始显示的时间
-            accumulateTime: 0,
+            accumulateTime: 0,//再次启动之前的累计时间
             initialTime: 0,//初始计时的时间
             preTime: 0, //上一次计次的时间,
-            record: []
+            record: [], //计次记录
         }
     }
 
